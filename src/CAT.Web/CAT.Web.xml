@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CAT.Web</name>
+    </assembly>
+    <members>
+        <member name="M:CAT.Web.Configurations.ServiceCollectionConfiguration.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register services into the default ASP.NET Core DI.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:CAT.Web.Configurations.ServiceCollectionConfiguration.ConfigurDbContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String)">
+            <summary>
+            Configures the EF context with a given connection string.
+            </summary>
+            <param name="services"></param>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:CAT.Web.Configurations.ServiceCollectionConfiguration.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures Swagger to include xml comments and adds a security definition.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:CAT.Web.Configurations.ServiceCollectionConfiguration.ConfigureIdentity(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)">
+            <summary>
+            Adds Identity and JWT configurations.
+            </summary>
+            <param name="services"></param>
+            <param name="jwtAppSettingOptions"></param>
+        </member>
+        <member name="M:CAT.Web.Controllers.AccountController.Register(CAT.Core.Models.RegisterModel)">
+            <summary>
+            Registers a user.
+            </summary>
+            <param name="registerModel">The model that represents the user data.</param>
+            <returns>An error message if creating a user failed.</returns>
+            <response code="200">The user was created successfully.</response>
+            <response code="400">Invalid input.</response>
+        </member>
+        <member name="M:CAT.Web.Controllers.AccountController.Login(CAT.Core.Models.LoginModel)">
+            <summary>
+            User login.
+            </summary>
+            <param name="loginModel">The model that represents the user credentials.</param>
+            <returns>A JWT token.</returns>
+            <response code="200">Correct credentials.</response>
+            <response code="400">Invalid credentials or don't match criteria.</response>
+        </member>
+        <member name="T:CAT.Web.Controllers.WeatherForecastController">
+            <summary>
+            A simple dummy Controller that was created in order to test the authentication.
+            </summary>
+        </member>
+    </members>
+</doc>

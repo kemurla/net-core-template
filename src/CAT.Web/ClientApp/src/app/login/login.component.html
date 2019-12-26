@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6 new-user-alert">
+    <h2>Login</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <form #f="ngForm" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" class="form-control" placeholder="Email"
+               #email="ngModel"
+               [(ngModel)]="model.email"
+               required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+               #password="ngModel"
+               [(ngModel)]="model.password"
+               required>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Login</button>
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        <strong>Oops!</strong> {{errorMessage}}
+      </div>
+
+    </form>
+  </div>
+</div>

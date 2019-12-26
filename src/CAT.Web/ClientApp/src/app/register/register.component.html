@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>Please enter your information</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <form #f="ngForm" (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="first-name">First name</label>
+        <input type="text" class="form-control" id="first-name" placeholder="First name" name="firstName"
+               #firstName="ngModel"
+               [(ngModel)]="model.firstName"
+               required>
+        <small *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="text-danger">First name is required.</small>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last name</label>
+        <input type="text" class="form-control" id="last-name" placeholder="Last name" name="lastName"
+               #lastName="ngModel"
+               [(ngModel)]="model.lastName"
+               required>
+        <small *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="text-danger">Last name is required.</small>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" class="form-control" placeholder="Email"
+               #email="ngModel"
+               [(ngModel)]="model.email"
+               required
+               email>
+        <small *ngIf="email.errors?.required && (email.dirty || email.touched)" class="text-danger">Email is required.</small>
+        <small *ngIf="email.errors?.email && (email.dirty || email.touched)" class="text-danger">Please enter a valid email.</small>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+               #password="ngModel"
+               [(ngModel)]="model.password"
+               required
+               minlength="5">
+        <small *ngIf="password.errors?.required && (password.dirty || password.touched)" class="text-danger">Password is required.</small>
+        <small *ngIf="password.errors?.minlength" class="text-danger">Password must be at least 5 characters long.</small>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Sign Up</button>
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        <strong>Oops!</strong> {{errorMessage}}
+      </div>
+    </form>
+  </div>
+</div>
