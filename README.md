@@ -1,10 +1,10 @@
 # Features
 
-✅ :white_check_mark: JWT authentication/authorization with ASP.NET Identity.
-✅ :white_check_mark: EntityFramework Core 3.1
-✅ :white_check_mark: Swagger UI with fully documented controllers.
-✅ :white_check_mark: Global exception handler.
-✅ :white_check_mark: FluentValidation
+✅ JWT authentication/authorization with ASP.NET Identity. <br/>
+✅ EntityFramework Core 3.1 <br/>
+✅ Swagger UI with fully documented controllers. <br/>
+✅ Global exception handler. <br/>
+✅ FluentValidation <br/>
 
 ## Development server
 
