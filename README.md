@@ -1,10 +1,15 @@
 # Features
 
-✅ JWT authentication/authorization with ASP.NET Identity. <br/>
-✅ EntityFramework Core 3.1 <br/>
-✅ Swagger UI with fully documented controllers. <br/>
-✅ Global exception handler. <br/>
-✅ FluentValidation <br/>
+✔️ Onion architecture <br/>
+✔️ JWT authentication/authorization with ASP.NET Identity <br/>
+✔️ EntityFramework Core 3.1 <br/>
+✔️ Swagger UI with fully documented controllers <br/>
+✔️ Global exception handler <br/>
+✔️ FluentValidation <br/>
+
+## Folder structure
+
+![Folder structure](https://i.imgur.com/NRJvbTQ.png)
 
 ## Development server
 
